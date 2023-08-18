@@ -98,9 +98,9 @@ def parse_arguments():
         "--PIK_kNN", type=str, default=None, help="path to knn embedding"
     )
     
-    parser.add_argument(
-        "--train_file", type=str, default=None, help="train file path with demonstrations"
-    )
+    #parser.add_argument(
+     #   "--train_file", type=str, default=None, help="train file path with demonstrations"
+    #)
 
 
     parser.add_argument(
