@@ -10,8 +10,8 @@ For the fixed prompt LM tuning and dynamic context prompt LM tuning:
 
 !python cli.py \
 --method pet \
---pattern_ids 3 \
---data_type "acl_arc" \
+--pattern_ids $pid \
+--data_type $data_type \
 --data_dir data/ \
 --model_type scibert \
 --model_name_or_path allenai/scibert_scivocab_uncased \
@@ -41,4 +41,33 @@ For the fixed prompt LM tuning and dynamic context prompt LM tuning:
 --overwrite_output_dir \
 --no_distillation
 
+```
+
+For promptless fine-tuning:
+
+```
+#function-generative
+!python cli.py \
+--method sequence_classifier \
+--data_dir data/gpt_act2/ \
+--model_type scibert \
+--model_name_or_path allenai/scibert_scivocab_uncased \
+--task_name function-generative \
+--output_dir output_generative/ \
+--do_train \
+--do_eval \
+--do_test \
+--sc_per_gpu_train_batch_size 4 \
+--sc_per_gpu_eval_batch_size 4 \
+--sc_per_gpu_unlabeled_batch_size 4 \
+--sc_gradient_accumulation_steps 4 \
+--sc_min_steps 250 \
+--sc_num_train_epochs 4 \
+--sc_max_seq_length 256 \
+--sc_repetitions 4 \
+--train_examples 10 50 100 500 1000 1500 2000 2500 \
+--warmup_steps 50 \
+--logging_steps 50 \
+--overwrite_output_dir \
+--no_distillation \
 ```
