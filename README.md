@@ -81,4 +81,6 @@ For zero-shot tuning free prompting:
   --output_dir output/ \
   --dataset ${dataset_name}
 ```
-Code for tuning free prompting is based on [Large Language Models are Zero-Shot Reasoners]{https://github.com/kojima-takeshi188/zero_shot_cot}
+Code for tuning free prompting is based on [Large Language Models are Zero-Shot Reasoners](https://github.com/kojima-takeshi188/zero_shot_cot)
+
+For datasets (ACL-ARC and ACT2) and code for dynamic citation context extraction, checkout the code here - [Dynamic Context Extraction for Citation Classification](https://github.com/oacore/dynamic_citation_context)
