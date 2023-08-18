@@ -10,8 +10,8 @@ For the fixed prompt LM tuning and dynamic context prompt LM tuning:
 
 !python cli.py \
 --method pet \
---pattern_ids $pid \
---data_type $data_type \
+--pattern_ids ${pid} \
+--data_type ${data_type} \
 --data_dir data/ \
 --model_type scibert \
 --model_name_or_path allenai/scibert_scivocab_uncased \
@@ -70,3 +70,15 @@ For promptless fine-tuning:
 --overwrite_output_dir \
 --no_distillation \
 ```
+
+For zero-shot tuning free prompting:
+
+```
+!python tuning_free/main.py \
+  --method "zero_shot_reason" \
+  --input_file 'test.txt' \
+  --model 'gpt3.5' \
+  --output_dir output/ \
+  --dataset ${dataset_name}
+```
+Code for tuning free prompting is based on [Large Language Models are Zero-Shot Reasoners]{https://github.com/kojima-takeshi188/zero_shot_cot}
