@@ -46,14 +46,13 @@ For the fixed prompt LM tuning and dynamic context prompt LM tuning:
 For promptless fine-tuning:
 
 ```
-#function-generative
 !python cli.py \
 --method sequence_classifier \
---data_dir data/gpt_act2/ \
+--data_dir data/ \
 --model_type scibert \
 --model_name_or_path allenai/scibert_scivocab_uncased \
---task_name function-generative \
---output_dir output_generative/ \
+--task_name function \
+--output_dir output/ \
 --do_train \
 --do_eval \
 --do_test \
@@ -65,7 +64,7 @@ For promptless fine-tuning:
 --sc_num_train_epochs 4 \
 --sc_max_seq_length 256 \
 --sc_repetitions 4 \
---train_examples 10 50 100 500 1000 1500 2000 2500 \
+--train_examples 10 50 100 500 1000 1372 \
 --warmup_steps 50 \
 --logging_steps 50 \
 --overwrite_output_dir \
