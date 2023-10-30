@@ -35,12 +35,6 @@ def strip_punctuation(input_text):
 
 # for longer outputs from chatgpt, check for citation function
 def find_last_occurrence(output, classes):
-    
-    #background = ['acknowledge']
-    #motivation = ['motivated', 'motivates', 'motive']
-    #use = ['utilise']
-    #extend = ['extend', 'extends']
-    #compares = ['compares', 'contrasts', 'compare', 'contrast', 'limitations', 'compares/contrasts']
 
     try:
         words = output.split()
@@ -66,7 +60,7 @@ def verify_predictions(pred, actual):
     label = None
     type = 0
     if pred not in classes:
-        #lbl = verify_label_in_output(pred, classes)
+
         lbl = find_last_occurrence(pred, classes)
         if lbl != -1:
             label = verbalize(lbl, type)
