@@ -1,8 +1,8 @@
 # prompt_citation_classification
 
-This repository contains the code for the CIKM 2023 paper, "Prompting Strategies for Citation Classification".
+This repository contains the code for the CIKM 2023 paper, [Prompting Strategies for Citation Classification](https://dl.acm.org/doi/pdf/10.1145/3583780.3615018).
 
-The code for pet is adapted from - [How Many Data Points is a Prompt Worth?](https://github.com/TevenLeScao/pet)
+The code for PET is adapted from - [How Many Data Points is a Prompt Worth?](https://github.com/TevenLeScao/pet)
 
 For the fixed prompt LM tuning and dynamic context prompt LM tuning:
 
@@ -84,3 +84,26 @@ For zero-shot tuning free prompting:
 Code for tuning free prompting is based on [Large Language Models are Zero-Shot Reasoners](https://github.com/kojima-takeshi188/zero_shot_cot)
 
 For datasets (ACL-ARC and ACT2) and code for dynamic citation context extraction, checkout the code here - [Dynamic Context Extraction for Citation Classification](https://github.com/oacore/dynamic_citation_context)
+
+### Citation
+
+Please cite our paper as follows:
+```
+@inproceedings{10.1145/3583780.3615018,
+author = {Kunnath, Suchetha N. and Pride, David and Knoth, Petr},
+title = {Prompting Strategies for Citation Classification},
+year = {2023},
+isbn = {9798400701245},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3583780.3615018},
+doi = {10.1145/3583780.3615018},
+abstract = {Citation classification aims to identify the purpose of the cited article in the citing article. Previous citation classification methods rely largely on supervised approaches. The models are trained on datasets with citing sentences or citation contexts annotated for a citation's purpose or function or intent. Recent advancements in Large Language Models (LLMs) have dramatically improved the ability of NLP systems to achieve state-of-the-art performances under zero or few-shot settings. This makes LLMs particularly suitable for tasks where sufficiently large labelled datasets are not yet available, which remains to be the case for citation classification. This paper systematically investigates the effectiveness of different prompting strategies for citation classification and compares them to promptless strategies as a baseline. Specifically, we evaluate the following four strategies, two of which we introduce for the first time, which involve updating Language Model (LM) parameters while training the model: (1) Promptless fine-tuning, (2) Fixed-prompt LM tuning, (3) Dynamic Context-prompt LM tuning (proposed), (4) Prompt + LM fine-tuning (proposed). Additionally, we test the zero-shot performance of LLMs, GPT3.5, a (5) Tuning-free prompting strategy that involves no parameter updating. Our results show that prompting methods based on LM parameter updating significantly improve citation classification performances on both domain-specific and multi-disciplinary citation classifications. Moreover, our Dynamic Context-prompting method achieves top scores both for the ACL-ARC and ACT2 citation classification datasets, surpassing the highest-performing system in the 3C shared task benchmark. Interestingly, we observe zero-shot GPT3.5 to perform well on ACT2 but poorly on the ACL-ARC dataset.},
+booktitle = {Proceedings of the 32nd ACM International Conference on Information and Knowledge Management},
+pages = {1127–1137},
+numpages = {11},
+keywords = {prompt training, research evaluation, large language models, citation classification},
+location = {Birmingham, United Kingdom},
+series = {CIKM '23}
+}
+```
